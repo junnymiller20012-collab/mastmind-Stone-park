@@ -664,6 +664,52 @@
       border-color: var(--red);
     }
 
+    /* ── PHONE WITH COUNTRY CODE ── */
+    .phone-input-wrap {
+      display: flex;
+      border: 1px solid rgba(255,255,255,0.12);
+      transition: border-color 0.25s;
+    }
+    .phone-input-wrap:focus-within { border-color: var(--red); }
+
+    .country-select {
+      background: rgba(255,255,255,0.04);
+      border: none;
+      border-right: 1px solid rgba(255,255,255,0.12);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 300;
+      padding: 0.85rem 0.7rem;
+      outline: none;
+      cursor: pointer;
+      flex-shrink: 0;
+      max-width: 130px;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23b0aba4'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 8px center;
+      padding-right: 24px;
+    }
+    .country-select option {
+      background: #1a1a1a;
+      color: var(--white);
+    }
+    .phone-number-input {
+      background: transparent;
+      border: none !important;
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 300;
+      padding: 0.85rem 1.1rem;
+      outline: none;
+      width: 100%;
+      transition: none;
+    }
+    .phone-number-input::placeholder { color: rgba(176,171,164,0.35); }
+
     .form-submit {
       margin-top: 0.5rem;
       background: var(--red);
@@ -1070,7 +1116,95 @@
           </div>
           <div class="form-group">
             <label for="phone">Teléfono</label>
-            <input type="tel" id="phone" name="phone" placeholder="+1 (000) 000-0000" required />
+            <div class="phone-input-wrap">
+              <select class="country-select" id="countryCode" name="country_code" aria-label="Código de país">
+                <option value="+1">🇺🇸 +1</option>
+                <option value="+1-CA">🇨🇦 +1</option>
+                <option value="+52">🇲🇽 +52</option>
+                <option value="+54">🇦🇷 +54</option>
+                <option value="+55">🇧🇷 +55</option>
+                <option value="+56">🇨🇱 +56</option>
+                <option value="+57">🇨🇴 +57</option>
+                <option value="+58">🇻🇪 +58</option>
+                <option value="+51">🇵🇪 +51</option>
+                <option value="+593">🇪🇨 +593</option>
+                <option value="+591">🇧🇴 +591</option>
+                <option value="+595">🇵🇾 +595</option>
+                <option value="+598">🇺🇾 +598</option>
+                <option value="+503">🇸🇻 +503</option>
+                <option value="+502">🇬🇹 +502</option>
+                <option value="+504">🇭🇳 +504</option>
+                <option value="+505">🇳🇮 +505</option>
+                <option value="+506">🇨🇷 +506</option>
+                <option value="+507">🇵🇦 +507</option>
+                <option value="+1-DO">🇩🇴 +1</option>
+                <option value="+1-PR">🇵🇷 +1</option>
+                <option value="+53">🇨🇺 +53</option>
+                <option value="+509">🇭🇹 +509</option>
+                <option value="+1-JM">🇯🇲 +1</option>
+                <option value="+1-TT">🇹🇹 +1</option>
+                <option value="+34">🇪🇸 +34</option>
+                <option value="+44">🇬🇧 +44</option>
+                <option value="+33">🇫🇷 +33</option>
+                <option value="+49">🇩🇪 +49</option>
+                <option value="+39">🇮🇹 +39</option>
+                <option value="+351">🇵🇹 +351</option>
+                <option value="+31">🇳🇱 +31</option>
+                <option value="+32">🇧🇪 +32</option>
+                <option value="+41">🇨🇭 +41</option>
+                <option value="+43">🇦🇹 +43</option>
+                <option value="+46">🇸🇪 +46</option>
+                <option value="+47">🇳🇴 +47</option>
+                <option value="+45">🇩🇰 +45</option>
+                <option value="+358">🇫🇮 +358</option>
+                <option value="+48">🇵🇱 +48</option>
+                <option value="+420">🇨🇿 +420</option>
+                <option value="+36">🇭🇺 +36</option>
+                <option value="+40">🇷🇴 +40</option>
+                <option value="+30">🇬🇷 +30</option>
+                <option value="+90">🇹🇷 +90</option>
+                <option value="+380">🇺🇦 +380</option>
+                <option value="+7">🇷🇺 +7</option>
+                <option value="+86">🇨🇳 +86</option>
+                <option value="+81">🇯🇵 +81</option>
+                <option value="+82">🇰🇷 +82</option>
+                <option value="+91">🇮🇳 +91</option>
+                <option value="+92">🇵🇰 +92</option>
+                <option value="+880">🇧🇩 +880</option>
+                <option value="+94">🇱🇰 +94</option>
+                <option value="+62">🇮🇩 +62</option>
+                <option value="+63">🇵🇭 +63</option>
+                <option value="+84">🇻🇳 +84</option>
+                <option value="+66">🇹🇭 +66</option>
+                <option value="+60">🇲🇾 +60</option>
+                <option value="+65">🇸🇬 +65</option>
+                <option value="+61">🇦🇺 +61</option>
+                <option value="+64">🇳🇿 +64</option>
+                <option value="+20">🇪🇬 +20</option>
+                <option value="+27">🇿🇦 +27</option>
+                <option value="+234">🇳🇬 +234</option>
+                <option value="+254">🇰🇪 +254</option>
+                <option value="+233">🇬🇭 +233</option>
+                <option value="+212">🇲🇦 +212</option>
+                <option value="+216">🇹🇳 +216</option>
+                <option value="+213">🇩🇿 +213</option>
+                <option value="+966">🇸🇦 +966</option>
+                <option value="+971">🇦🇪 +971</option>
+                <option value="+972">🇮🇱 +972</option>
+                <option value="+98">🇮🇷 +98</option>
+                <option value="+964">🇮🇶 +964</option>
+                <option value="+961">🇱🇧 +961</option>
+                <option value="+962">🇯🇴 +962</option>
+              </select>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                class="phone-number-input"
+                placeholder="000-000-0000"
+                required
+              />
+            </div>
           </div>
         </div>
         <div class="form-group">
